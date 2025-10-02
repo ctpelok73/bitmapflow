@@ -18,7 +18,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libopencv-dev libclang-dev clang pkg-config build-essential cmake g++-11
+        sudo apt-get install -y libopencv-dev libclang-dev clang pkg-config build-essential cmake
         
     - name: Install Rust
       run: |
@@ -31,8 +31,6 @@ jobs:
       run: |
         echo "OpenCV_DIR=/usr/lib/x86_64-linux-gnu/cmake/opencv4" >> $GITHUB_ENV
         echo "PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig" >> $GITHUB_ENV
-        echo "CC=gcc-11" >> $GITHUB_ENV
-        echo "CXX=g++-11" >> $GITHUB_ENV
         
     - name: Build Rust library
       run: |
